@@ -1,0 +1,12 @@
+ 
+ :: MOVIE ::
+ Title: Movie 1
+ Genre: Genero 1
+ Year: 2018
+ Duration: 121
+
+ :: BOOK ::
+ Title: Book 0
+ editionDate: Wed Jan 22 01:20:39 COT 2020
+ Editorial: Editorial 0
+ Isbn: ABC0	Manuel Rico	Pepito Perez
