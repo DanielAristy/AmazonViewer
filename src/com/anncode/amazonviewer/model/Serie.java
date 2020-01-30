@@ -8,13 +8,13 @@ public class Serie extends Film {
     private int sessionQuantity;
     private ArrayList<Chapter> chapters;
 
-    public Serie(String title, String genre, String creator, int duration, int sessionQuantity,ArrayList<Chapter> chapters) {
-        //Hace referencia a la clase padre
+
+    public Serie(String title, String genre, String creator, int duration, int sessionQuantity) {
         super(title, genre, creator, duration);
-        //Elementos hijos de la clase padre por eso usamos this
+        // TODO Auto-generated constructor stub
         this.sessionQuantity = sessionQuantity;
-        this.chapters = chapters;
     }
+
 
     public int getId() {
         return id;
@@ -36,23 +36,27 @@ public class Serie extends Film {
         this.chapters = chapters;
     }
 
-    public static ArrayList<Serie> seriesList(){
-        ArrayList<Serie> series = new ArrayList<>();
-
-        for (int i = 0; i < 5; i++) {
-            series.add(new Serie("Serie "+i, "Genre "+ i,
-                    "Creator " +i, 1200 +i,i+1,Chapter.chaptersList()));
-        }
-        return series;
-    }
-
     @Override
     public String toString() {
-        return " \n :: SERIE ::" +
-                "\n Title: "+ getTitle() +
-                "\n Genre: "+ getGenre() +
-                "\n Year: "+ getYear() +
-                "\n Year: "+ getCreator() +
-                "\n Duration: "+ getDuration();
+        // TODO Auto-generated method stub
+        return  "\n :: SERIE ::" +
+                "\n Title: " + getTitle() +
+                "\n Genero: " + getGenre() +
+                "\n Year: " + getYear() +
+                "\n Creator: " + getCreator() +
+                "\n Duration: " + getDuration();
+    }
+
+    public static ArrayList<Serie> seriesList() {
+        ArrayList<Serie> series = new ArrayList();
+
+        for (int i = 1; i <= 5; i++) {
+            Serie serie = new Serie("Serie "+i, "genero "+i, "creador "+i, 1200, 5);
+            serie.setChapters(Chapter.chaptersList(serie));
+            series.add(serie);
+
+        }
+
+        return series;
     }
 }

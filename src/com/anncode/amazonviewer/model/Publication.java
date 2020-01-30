@@ -4,47 +4,43 @@ import java.util.Date;
 
 public class Publication {
 
-    private String title;
-    private Date editionDate;
-    private String editotial;
-    private String[] autors;
 
-    public Publication(String title, Date editionDate, String editotial, String[] autors) {
+    private String title;
+    private Date edititionDate;
+    private String editorial;
+    private String[] authors;
+
+
+    public Publication(String title, Date edititionDate, String editorial) {
+        super();
         this.title = title;
-        this.editionDate = editionDate;
-        this.editotial = editotial;
-        this.autors = autors;
+        this.edititionDate = edititionDate;
+        this.editorial = editorial;
     }
+
 
     public String getTitle() {
         return title;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
-
-    public Date getEditionDate() {
-        return editionDate;
+    public Date getEdititionDate() {
+        return edititionDate;
     }
-
-    public void setEditionDate(Date editionDate) {
-        this.editionDate = editionDate;
+    public void setEdititionDate(Date edititionDate) {
+        this.edititionDate = edititionDate;
     }
-
-    public String getEditotial() {
-        return editotial;
+    public String getEditorial() {
+        return editorial;
     }
-
-    public void setEditotial(String editotial) {
-        this.editotial = editotial;
+    public void setEditorial(String editorial) {
+        this.editorial = editorial;
     }
-
-    public String[] getAutors() {
-        return autors;
+    public String[] getAuthors() {
+        return authors;
     }
-
-    public void setAutors(String[] autors) {
-        this.autors = autors;
+    public void setAuthors(String[] authors) {
+        this.authors = authors;
     }
 }
