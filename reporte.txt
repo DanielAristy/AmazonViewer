@@ -6,6 +6,13 @@
  Creator: Creador 1
  Duration: 121
 
+ :: MOVIE ::
+ Title: Movie 2
+ Genero: Genero 2
+ Year: 2019
+ Creator: Creador 2
+ Duration: 122
+
  :: SERIE ::
  Title: Serie 1
  :: CHAPTER ::
@@ -20,28 +27,4 @@
  Title: Capituo 2
  Year: 2019
  Creator: creator2
- Duration: 45
-
- :: SERIE ::
- Title: Serie 1
- :: CHAPTER ::
- Title: Capituo 3
- Year: 2020
- Creator: creator3
- Duration: 45
-
- :: SERIE ::
- Title: Serie 1
- :: CHAPTER ::
- Title: Capituo 4
- Year: 2021
- Creator: creator4
- Duration: 45
-
- :: SERIE ::
- Title: Serie 1
- :: CHAPTER ::
- Title: Capituo 5
- Year: 2022
- Creator: creator5
  Duration: 45

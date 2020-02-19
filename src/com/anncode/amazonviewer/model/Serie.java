@@ -51,12 +51,16 @@ public class Serie extends Film {
         ArrayList<Serie> series = new ArrayList();
 
         for (int i = 1; i <= 5; i++) {
+
             Serie serie = new Serie("Serie "+i, "genero "+i, "creador "+i, 1200, 5);
             serie.setChapters(Chapter.chaptersList(serie));
             series.add(serie);
-
         }
-
         return series;
+    }
+
+    @Override
+    public void view() {
+        setViewed(true);
     }
 }

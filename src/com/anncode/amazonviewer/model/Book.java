@@ -102,7 +102,21 @@ public class Book extends Publication implements IVisualizable{
         for (int i = 1; i <= 5; i++) {
             books.add(new Book("Book " + i, new Date(), "editorial " + i, authors));
         }
-
         return books;
+    }
+
+    public void view(){
+        setReaded(true);
+        Date dateI = starToSee(new Date());
+
+        for (int i = 0; i < 100000; i++) {
+            System.out.println("..........");
+        }
+
+        //Termine de verla
+        stopToSee(dateI, new Date());
+        System.out.println();
+        System.out.println("Leíste: " + toString());
+        System.out.println("Por: " + getTimeReaded() + " milisegundos");
     }
 }
