@@ -7,6 +7,19 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ *<h1>AmazonViewer</h1>
+ * AmazonViewer es un programa que permite visualizar Movies, Series con sus respectivos Chapters,
+ * Books y Magazines. Te permite generar reportes generales y con fecha del día.
+ * <p>
+ * Existe algunas reglas como que todos los elementos pueden ser visualizados o leídos a excepción,
+ * de los Magazines, estás solo pueden ser vistas a modo de exposición sin ser leídas.
+ *
+ * @author Daniel
+ * @version 1.1
+ * @since 2019
+ * */
+
 public class Main {
 
     public static void main(String[] args) {
@@ -281,7 +294,6 @@ public class Main {
         for (Movie movie : movies) {
             if (movie.getIsViewed()) {
                 contentReport += movie.toString() + "\n";
-
             }
         }
 
@@ -290,7 +302,6 @@ public class Main {
             for (Chapter chapter : chapters) {
                 if (chapter.getIsViewed()) {
                     contentReport += chapter.toString() + "\n";
-
                 }
             }
         }
@@ -298,7 +309,6 @@ public class Main {
         for (Book book : books) {
             if (book.getIsReaded()) {
                 contentReport += book.toString() + "\n";
-
             }
         }
         report.setContent(contentReport);

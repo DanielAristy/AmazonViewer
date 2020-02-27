@@ -3,6 +3,11 @@ package com.anncode.amazonviewer.model;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * <h1>Magazine</h1>
+ * Hereda de {@link Publication}
+ * */
+
 public class Magazine extends  Publication{
 
     private int id;
@@ -42,5 +47,4 @@ public class Magazine extends  Publication{
 
         return magazines;
     }
-
 }

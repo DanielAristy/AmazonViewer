@@ -3,6 +3,17 @@ package com.anncode.amazonviewer.model;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * <h1>Book</h1>
+ *
+ * Hereda de {@link Publication}
+ * Implementa de {@link IVisualizable}
+ *
+ * @author Daniel
+ * @version 1.1
+ * @since 2019
+ * */
+
 public class Book extends Publication implements IVisualizable{
 
     private int id;
