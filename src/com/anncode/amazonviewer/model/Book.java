@@ -20,6 +20,7 @@ public class Book extends Publication implements IVisualizable{
     private String isbn;
     private boolean readed;
     private int timeReaded;
+    private ArrayList<Page> pages;
 
 
     public Book(String title, Date edititionDate, String editorial, String[] authors) {
@@ -28,6 +29,13 @@ public class Book extends Publication implements IVisualizable{
         setAuthors(authors);
     }
 
+    public ArrayList<Page> getPages() {
+        return pages;
+    }
+
+    public void setPages(ArrayList<Page> pages) {
+        this.pages = pages;
+    }
 
     public int getId() {
         return id;
@@ -120,9 +128,14 @@ public class Book extends Publication implements IVisualizable{
         setReaded(true);
         Date dateI = starToSee(new Date());
 
-        for (int i = 0; i < 100000; i++) {
-            System.out.println("..........");
-        }
+        int i = 0;
+
+        do {
+            System.out.println("......");
+            System.out.println("Page "+ getPages().get(i).getPageNumber());
+            System.out.println(getPages().get(i).getContent());
+            System.out.println("......");
+        }while (i < getPages().size());
 
         //Termine de verla
         stopToSee(dateI, new Date());
@@ -130,4 +143,49 @@ public class Book extends Publication implements IVisualizable{
         System.out.println("Leíste: " + toString());
         System.out.println("Por: " + getTimeReaded() + " milisegundos");
     }
+
+    public static class Page{
+        private int id;
+        private int pageNumber;
+        private String content;
+
+        public Page(int pageNumber, String content) {
+            this.pageNumber = pageNumber;
+            this.content = content;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public int getPageNumber() {
+            return pageNumber;
+        }
+
+        public void setPageNumber(int pageNumber) {
+            this.pageNumber = pageNumber;
+        }
+
+        public String getContent() {
+            return content;
+        }
+
+        public void setContent(String content) {
+            this.content = content;
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
