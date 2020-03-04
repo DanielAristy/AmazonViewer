@@ -1,5 +1,7 @@
 package com.anncode.amazonviewer.model;
 
+import com.anncode.amazonviewer.util.AmazonUtil;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -23,10 +25,11 @@ public class Book extends Publication implements IVisualizable{
     private ArrayList<Page> pages;
 
 
-    public Book(String title, Date edititionDate, String editorial, String[] authors) {
+    public Book(String title, Date edititionDate, String editorial, String[] authors, ArrayList<Page> pages) {
         super(title, edititionDate, editorial);
         // TODO Auto-generated constructor stub
         setAuthors(authors);
+        this.pages = pages;
     }
 
     public ArrayList<Page> getPages() {
@@ -118,8 +121,16 @@ public class Book extends Publication implements IVisualizable{
         for (int i = 0; i < 3; i++) {
             authors[i] = "author "+i;
         }
+
+        ArrayList<Page> pages = new ArrayList<>();
+        int pagina = 0;
+        for (int i = 0; i < 3; i++) {
+            pagina = i+1;
+            pages.add(new Page(pagina,"El contenido de nuestra pagina "+pagina));
+        }
+
         for (int i = 1; i <= 5; i++) {
-            books.add(new Book("Book " + i, new Date(), "editorial " + i, authors));
+            books.add(new Book("Book " + i, new Date(), "editorial " + i, authors, pages));
         }
         return books;
     }
@@ -135,6 +146,25 @@ public class Book extends Publication implements IVisualizable{
             System.out.println("Page "+ getPages().get(i).getPageNumber());
             System.out.println(getPages().get(i).getContent());
             System.out.println("......");
+
+            if (i != 0){
+                System.out.println("1. Regresar página");
+            }
+
+            System.out.println("2. Siguiente Página");
+            System.out.println("0. Cerrar el Libro");
+            System.out.println();
+
+            int response = AmazonUtil.validateUserResponseMenu(0,2);
+
+            if (response == 2){
+                i++;
+            }else if (response == 1){
+                i--;
+            }else if (response == 0){
+                break;
+            }
+
         }while (i < getPages().size());
 
         //Termine de verla
